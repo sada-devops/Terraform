@@ -1,6 +1,7 @@
 resource "aws_nat_gateway" "public_NAT" {
   allocation_id = aws_eip.eip_1.id
-  subnet_id     = aws_subnet.private_1a.id
+  subnet_id     = aws_subnet.public_1a.id
+# initial give subnet is private, changed to public subnet to test
 
   tags = {
     Name = "gw NAT"
