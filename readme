@@ -1,2 +1,3 @@
-sample terraform code files with out variables
-Test git from desktop
+#sample terraform code files with out variables
+#1 vpc, 1 pub subnet, 1 priv subnet, IGW, NAT, Elasicip, pub and priv route table and associations, gitignore.
+#This setup is for practice purpose
