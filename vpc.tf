@@ -8,3 +8,16 @@ resource "aws_vpc" "demo" {
       created_by = "svrao"
   }
 }
+
+#vpc peering test
+
+resource "aws_vpc" "VPCB" {
+  cidr_block = "172.31.0.0/16"
+  instance_tenancy = "default"
+
+  tags = {
+      Name = "demo_VPCB"
+      terraformed = "true"
+      created_by = "svrao"
+  }
+}

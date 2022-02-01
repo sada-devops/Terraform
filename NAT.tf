@@ -20,3 +20,18 @@ resource "aws_nat_gateway" "public_NAT" {
 #   connectivity_type = "private"
 #   subnet_id = aws_subnet.private_1b.id
 # }
+
+#vpc peering test
+
+resource "aws_nat_gateway" "VPCB_public_NAT" {
+  allocation_id = aws_eip.eip_2.id
+  subnet_id     = aws_subnet.VPCB_subnet_public_1a.id
+  
+  tags = {
+    Name = "VPCB NAT"
+  }
+
+  # To ensure proper ordering, it is recommended to add an explicit dependency
+  # on the Internet Gateway for the VPC.
+  depends_on = [aws_internet_gateway.igw2]
+}
